@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Streaming Server</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- เครื่องเล่นวิดีโอ -->
+     <br><br>
+    <div class="player-container">
+        <video id="videoPlayer" controls>
+            <source id="videoSource" src="" type="video/mp4">
+            เบราว์เซอร์ของคุณไม่รองรับ HTML5 Video
+        </video>
+    </div>
+<br><br>
+    <!-- รายการตอน -->
+    <div class="playlist-container">
+        <ul class="episode-list" id="playlist">
+            <!-- JavaScript จะมาสร้างรายชื่อตอนตรงนี้ -->
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

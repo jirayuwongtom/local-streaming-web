@@ -1,0 +1,59 @@
+body {
+    background-color: #1a1a1d; /* สีพื้นหลังโทนเข้ม */
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* กล่องใส่วิดีโอ */
+.player-container {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+video {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    background-color: #000;
+}
+/* ส่วนของรายการตอน (Playlist) */
+.playlist-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #222225;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.playlist-header {
+    color: #e67e22; /* สีส้มคล้ายในรูป */
+    text-align: center;
+    margin-top: 0;
+    font-weight: normal;
+}
+.episode-list {
+    list-style: none; /* เอาจุดไข่ปลาออก */
+    padding: 0;
+    margin: 0;
+}
+.episode-item {
+    padding: 12px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+    transition: background 0.2s, color 0.2s;
+}
+/* เวลาเอาเมาส์ชี้ */
+.episode-item:hover {
+    background-color: #333336;
+}
+/* ตอนที่กำลังเล่นอยู่ (Active) */
+.episode-item.active {
+    color: #e67e22;
+    font-weight: bold;
+}
