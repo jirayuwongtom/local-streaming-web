@@ -57,3 +57,55 @@ video {
     color: #e67e22;
     font-weight: bold;
 }
+/* ===== เพิ่มใหม่: ปุ่มเต็มจอ / ข้อความสถานะ / โหมดเต็มจอ ===== */
+.player-container {
+    position: relative;
+}
+.fullscreen-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    line-height: 1;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.player-container:hover .fullscreen-btn,
+.fullscreen-btn:focus-visible {
+    opacity: 1;
+}
+/* หมายเหตุ: ห้ามใช้ display:flex กับ container นี้ เพราะชั้นซับ (.JASSUB) ถูกแทรกต่อท้าย <video>
+   ถ้าเป็น flex มันจะถูกดันไปอยู่ข้างๆ แล้วซับจะหลุดออกนอกจอ */
+.player-container:fullscreen {
+    max-width: none;
+    margin: 0;
+    background: #000;
+}
+.player-container:fullscreen video {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+}
+.status {
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #2b2b2f;
+    color: #f0c27b;
+    font-size: 14px;
+    line-height: 1.5;
+}

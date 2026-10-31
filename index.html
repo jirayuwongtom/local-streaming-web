@@ -8,20 +8,24 @@
 </head>
 <body>
     <!-- เครื่องเล่นวิดีโอ -->
-     <br><br>
-    <div class="player-container">
-        <video id="videoPlayer" controls>
-            <source id="videoSource" src="" type="video/mp4">
-            เบราว์เซอร์ของคุณไม่รองรับ HTML5 Video
-        </video>
+    <br><br>
+    <div class="player-container" id="playerContainer">
+        <!-- ไม่ใส่ type ไว้ เพื่อให้เล่นได้ทั้ง .mp4 และ .mkv (script.js เป็นคนกำหนด src) -->
+        <video id="videoPlayer" controls controlslist="nofullscreen" playsinline></video>
+        <!-- ปุ่มเต็มจอของเราเอง: ต้องขยาย container ทั้งก้อน ซับถึงจะยังแสดงตอนเต็มจอ -->
+        <button id="fullscreenBtn" class="fullscreen-btn" type="button" title="เต็มจอ (F)">⛶</button>
     </div>
-<br><br>
+    <div id="status" class="status" hidden></div>
+    <br><br>
     <!-- รายการตอน -->
     <div class="playlist-container">
         <ul class="episode-list" id="playlist">
             <!-- JavaScript จะมาสร้างรายชื่อตอนตรงนี้ -->
         </ul>
     </div>
+
+    <!-- JASSUB = libass (ตัวเรนเดอร์ .ass ตัวเดียวกับที่ VLC ใช้) คอมไพล์เป็น WebAssembly -->
+    <script src="lib/jassub/jassub.umd.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
